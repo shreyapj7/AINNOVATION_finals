@@ -1,0 +1,384 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodConnects</title>
+    <!-- Tailwind CDN kept as-is for quick styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Link to separated stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans">
+    <!-- Notification Container -->
+    <div id="notificationContainer"></div>
+
+    <!-- Homepage -->
+    <div id="homepage" class="page">
+        <!-- Header -->
+        <header class="hero-bg text-white">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <div class="text-2xl font-bold">FoodConnects</div>
+                <button id="donateBtn" class="bg-yellow-400 text-purple-900 px-6 py-2 rounded-full font-semibold hover:bg-yellow-300 transition duration-300">
+                    Donate
+                </button>
+            </nav>
+            
+            <!-- Hero Section -->
+            <div class="container mx-auto px-6 py-20 text-center">
+                <h1 class="text-5xl font-bold mb-6 fade-in">FoodConnects</h1>
+                <p class="text-xl mb-8 max-w-2xl mx-auto fade-in">
+                    Bridging the gap between food surplus and food scarcity in India
+                </p>
+                
+                <!-- Impact Stats on Homepage -->
+                <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto mt-12">
+                    <div class="bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur-sm">
+                        <h3 class="text-lg font-semibold mb-2">People Fed</h3>
+                        <p class="text-3xl font-bold" id="homepagePeopleFed">0</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur-sm">
+                        <h3 class="text-lg font-semibold mb-2">Active Listings</h3>
+                        <p class="text-3xl font-bold" id="homepageActiveListings">0</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Problem Statement -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold mb-8 text-gray-800">Tackling Food Wastage in India</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        India wastes approximately 67 million tonnes of food annually, while millions go hungry.
+                        Our platform connects food producers with surplus food to consumers who need it, reducing
+                        wastage and fighting hunger simultaneously.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        FoodConnects creates a seamless bridge between restaurants, caterers, and individuals
+                        with excess food and NGOs, shelters, and communities in need, ensuring fresh food
+                        reaches those who need it most within safe time limits.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Type Selection -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Join Our Community</h2>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Producer Card -->
+                    <div class="card-hover bg-white rounded-xl shadow-lg p-8 text-center border border-gray-200">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">I'm a Producer</h3>
+                        <p class="text-gray-600 mb-6">
+                            Have surplus food? Share it with those in need and make a difference in your community.
+                        </p>
+                        <button id="producerBtn" class="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition duration-300">
+                            Get Started as Producer
+                        </button>
+                    </div>
+
+                    <!-- Consumer Card -->
+                    <div class="card-hover bg-white rounded-xl shadow-lg p-8 text-center border border-gray-200">
+                        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">I'm a Consumer</h3>
+                        <p class="text-gray-600 mb-6">
+                            Looking for food donations? Connect with local producers and help reduce food waste.
+                        </p>
+                        <button id="consumerBtn" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300">
+                            Get Started as Consumer
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-8">
+            <div class="container mx-auto px-6 text-center">
+                <p>&copy; 2025 FoodConnects. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Producer Auth Page -->
+    <div id="producerAuth" class="page hidden">
+        <nav class="bg-white shadow-md px-6 py-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <button id="backToHomeFromProducer" class="text-purple-600 hover:text-purple-800 font-semibold">
+                    ← Back to Home
+                </button>
+                <div class="text-2xl font-bold text-purple-600">FoodConnects</div>
+            </div>
+        </nav>
+
+        <div class="min-h-screen bg-gray-50 py-12">
+            <div class="max-w-md mx-auto bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-center mb-8 text-gray-800">Producer Access</h2>
+                
+                <!-- Auth Toggle -->
+                <div class="flex mb-6">
+                    <button id="producerSignInTab" class="flex-1 py-2 text-center font-semibold border-b-2 border-purple-600 text-purple-600">
+                        Sign In
+                    </button>
+                    <button id="producerSignUpTab" class="flex-1 py-2 text-center font-semibold border-b-2 border-gray-200 text-gray-500">
+                        Sign Up
+                    </button>
+                </div>
+
+                <!-- Sign In Form -->
+                <form id="producerSignInForm" class="auth-form">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Email ID</label>
+                        <input type="email" id="producerSignInEmail" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                        <input type="password" id="producerSignInPassword" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required>
+                    </div>
+                    <button type="submit" class="w-full bg-purple-600 text-white py-2 rounded-lg font-semibold hover:bg-purple-700 transition duration-300">
+                        Sign In
+                    </button>
+                </form>
+
+                <!-- Sign Up Form -->
+                <form id="producerSignUpForm" class="auth-form hidden">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Email ID</label>
+                        <input type="email" id="producerSignUpEmail" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Phone Number</label>
+                        <input type="tel" id="producerSignUpPhone" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                        <input type="password" id="producerSignUpPassword" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Location</label>
+                        <input type="text" id="producerSignUpLocation" placeholder="Enter your location manually" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required>
+                    </div>
+                    <button type="submit" class="w-full bg-purple-600 text-white py-2 rounded-lg font-semibold hover:bg-purple-700 transition duration-300">
+                        Sign Up
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Consumer Auth Page -->
+    <div id="consumerAuth" class="page hidden">
+        <nav class="bg-white shadow-md px-6 py-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <button id="backToHomeFromConsumer" class="text-purple-600 hover:text-purple-800 font-semibold">
+                    ← Back to Home
+                </button>
+                <div class="text-2xl font-bold text-purple-600">FoodConnects</div>
+            </div>
+        </nav>
+
+        <div class="min-h-screen bg-gray-50 py-12">
+            <div class="max-w-md mx-auto bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-center mb-8 text-gray-800">Consumer Access</h2>
+                
+                <!-- Auth Toggle -->
+                <div class="flex mb-6">
+                    <button id="consumerSignInTab" class="flex-1 py-2 text-center font-semibold border-b-2 border-blue-600 text-blue-600">
+                        Sign In
+                    </button>
+                    <button id="consumerSignUpTab" class="flex-1 py-2 text-center font-semibold border-b-2 border-gray-200 text-gray-500">
+                        Sign Up
+                    </button>
+                </div>
+
+                <!-- Sign In Form -->
+                <form id="consumerSignInForm" class="auth-form">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Email ID</label>
+                        <input type="email" id="consumerSignInEmail" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-600" required>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                        <input type="password" id="consumerSignInPassword" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-600" required>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+                        Sign In
+                    </button>
+                </form>
+
+                <!-- Sign Up Form -->
+                <form id="consumerSignUpForm" class="auth-form hidden">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Email ID</label>
+                        <input type="email" id="consumerSignUpEmail" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-600" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Phone Number</label>
+                        <input type="tel" id="consumerSignUpPhone" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-600" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                        <input type="password" id="consumerSignUpPassword" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-600" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Location</label>
+                        <input type="text" id="consumerSignUpLocation" placeholder="Enter your location manually" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-600" required>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+                        Sign Up
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Producer Dashboard -->
+    <div id="producerDashboard" class="page hidden">
+        <nav class="bg-white shadow-md px-6 py-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <button id="producerBackToHome" class="text-purple-600 hover:text-purple-800 font-semibold">
+                    ← Back to Home
+                </button>
+                <div class="text-2xl font-bold text-purple-600">Producer Dashboard</div>
+                <div class="text-sm text-gray-600" id="producerWelcome"></div>
+            </div>
+        </nav>
+
+        <div class="min-h-screen bg-gray-50 py-8">
+            <div class="container mx-auto px-6">
+                <!-- Add Food Form -->
+                <div class="bg-white rounded-xl shadow-md p-8 mb-8">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-800">Add Food Donation</h2>
+                    <form id="addFoodForm" class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Food Name</label>
+                            <input type="text" id="foodName" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Food Type</label>
+                            <select id="foodType" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required>
+                                <option value="">Select Type</option>
+                                <option value="veg">Vegetarian</option>
+                                <option value="non-veg">Non-Vegetarian</option>
+                                <option value="vegan">Vegan</option>
+                                <option value="all">All Types</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Quantity (People)</label>
+                            <input type="number" id="foodQuantity" min="1" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-600" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Prepared Hours Ago (Optional)</label>
+                            <input type="number" id="hoursAgo" min="0" max="9" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-600">
+                            <small class="text-gray-500">Maximum 9 hours ago</small>
+                        </div>
+                        <div class="md:col-span-2">
+                            <button type="submit" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300">
+                                Add Food Donation
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Food Listings -->
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-800">Your Food Donations</h2>
+                    <div id="foodListings" class="space-y-4">
+                        <p class="text-gray-500 text-center py-8">No food donations yet. Add your first donation above!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Consumer Dashboard -->
+    <div id="consumerDashboard" class="page hidden">
+        <nav class="bg-white shadow-md px-6 py-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <button id="consumerBackToHome" class="text-blue-600 hover:text-blue-800 font-semibold">
+                    ← Back to Home
+                </button>
+                <div class="text-2xl font-bold text-blue-600">Consumer Dashboard</div>
+                <div class="text-sm text-gray-600" id="consumerWelcome"></div>
+            </div>
+        </nav>
+
+        <div class="min-h-screen bg-gray-50 py-8">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold mb-8 text-gray-800">Available Food Donations</h2>
+                
+                <div id="availableFoodListings" class="space-y-6">
+                    <p class="text-gray-500 text-center py-8">No food donations available at the moment.</p>
+                </div>
+
+                <!-- My Accepted Donations -->
+                <div class="mt-12 bg-white rounded-xl shadow-md p-8">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-800">My Accepted Donations</h2>
+                    <div id="myAcceptedDonations" class="space-y-4">
+                        <p class="text-gray-500 text-center py-8">No accepted donations yet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Donation Modal -->
+    <div id="donateModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+            <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Support FoodConnects</h2>
+            <p class="text-gray-600 mb-6 text-center">
+                Help us fight food wastage and hunger. Your donation helps maintain our platform and reach more communities.
+            </p>
+            <div class="space-y-4">
+                <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300">
+                    Donate ₹100
+                </button>
+                <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300">
+                    Donate ₹500
+                </button>
+                <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300">
+                    Donate ₹1000
+                </button>
+                <button class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+                    Custom Amount
+                </button>
+            </div>
+            <button id="closeDonateModal" class="w-full mt-6 bg-gray-300 text-gray-700 py-2 rounded-lg font-semibold hover:bg-gray-400 transition duration-300">
+                Close
+            </button>
+        </div>
+    </div>
+    <!-- AI Suggestion Box -->
+<!-- AI Suggestion Box -->
+<div style="margin:20px;padding:20px;border:1px solid #ccc;border-radius:8px;">
+  <h3>🤖 AI Food Suggestion</h3>
+  
+  <input id="userInput" type="text" placeholder="Type something about food donation..." 
+         style="width:80%;padding:8px;">
+         
+  <button id="aiButton" style="padding:8px 16px;">Get AI Suggestion</button>
+  
+  <p id="aiOutput" style="margin-top:10px;color:green;font-weight:bold;"></p>
+</div>
+
+
+
+    <!-- Link to separated script (placed at end so DOM elements exist) -->
+    <script src="script.js"></script>
+</body>
+</html>

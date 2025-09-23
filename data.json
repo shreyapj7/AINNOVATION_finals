@@ -1,0 +1,17 @@
+{
+  "food_items": [
+    {
+      "food_id": 1,
+      "food_name": "Rice",
+      "quantity": 20,
+      "feeds_for": 40,
+      "type": "Vegetarian",
+      "status": "looking_for_consumer"
+    }
+  ],
+  "stats": {
+    "total_people_fed": 150,
+    "total_deliveries": 50,
+    "active_food_items": 3
+  }
+}
