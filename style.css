@@ -38,5 +38,17 @@
     background-color: #ef4444;
 }
 .notification.info {
-    background-color: #3b82f6;
+    background-color: #3b82f6;
 }
+
+        footer{
+            background-color:rgb(31, 41,55);
+            color:white;footer{
+                background-color:rgb(31, 41,55);
+                color:white;
+                text-align: center;
+                padding: 1rem;
+            }
+            text-align: center;
+            padding: 1rem;
+        }
